@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 250px;
+				border: 1px dashed #000;
+				overflow: hidden;
+			}
+			#box>button{
+				height: 50px;
+				width: 62px;
+				background: #ccc;
+			}
+			#box>.show{
+				background: red;
+			}
+			#box>div{
+				width: 200px;
+				height: 200px;
+				background: aqua;
+				text-align: center;
+				line-height: 200px;
+				font-size: 48px;
+				display: none;
+			}
+			#box>.active{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<button class="show">点击1</button>
+			<button>点击2</button>
+			<button>点击3</button>
+			<div class="active">
+				11111
+			</div>
+			<div>
+				22222
+			</div>
+			<div>
+				3333
+			</div>
+		</div>
+		<script>
+			var box = document.getElementById('box')
+			var div = box.getElementsByTagName('div')
+			var btn = box.getElementsByTagName('button')
+			for(var i=0; i<btn.length; i++){
+				btn[i].index=i
+				btn[i].onclick = function(){
+					for(var j=0; j<btn.length; j++){
+						btn[j].className = '';
+						div[j].className = ''
+					}
+					this.className = 'show'
+					div[this.index].className = 'active'
+				}
+			}
+		</script>
+	</body>
+</html>

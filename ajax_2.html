@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-2.1.4.min.js"></script>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		i {
+			color: red;
+		}
+		
+		span {
+			color: #0000FF;
+		}
+	</style>
+
+	<body>
+		<input type="text" id="txt" /><button id="btn">搜索</button>
+		<ul id="op"></ul>
+		<script>
+			$.ajax({
+				url: "http://10.115.22.222:8888/zhuce/list",
+				type: "get",
+				success: function(req) {
+					//console.log(req)
+					for(var i = 0; i < req.length; i++) {
+						$("<li>" + req[i].companyname + "<i>" + req[i].name + "</i><a href=http://127.0.0.1:8020/ajax/datail.html?id=" + req[i].id + ">详情</a><a href=http://127.0.0.1:8020/ajax/amend.html?id=" + req[i].id + ">修改</a><a href='javascript:;' class='a_2'>删除</a></li>").appendTo('#op')
+					}
+					$('.a_2').click(function() {
+						var idx = $(this).parents().index()
+						$.ajax({
+							url: "http://10.115.22.222:8888/zhuce/del?id="+req[idx].id,
+							type: "get",
+							success: function(e) {								
+								if(e.flag == 1) {
+									alert('成功');
+									
+									location.reload()
+								} else {
+									alert('失败')
+								}
+							}
+						})
+					})
+				},
+				error: function() {
+					alert('失败')
+				}
+
+			});
+//			$('#btn').click(function() {
+//				$("#op").html('');
+//				if($('#txt').val() == "") {
+//					$('#op').html('请输入你所需的内容');
+//					return;
+//				} else {
+//					$.ajax({
+//						url: "http://10.115.22.222:8888/infos/search?u=" + removeAllSpace($('#txt').val()),
+//						type: "get",
+//						success: function(req) {
+//							console.log(req)
+//								// $("<li>" + req[0].companyname+</li>").appendTo('#op')	
+//							for(var i = 0; i < req.length; i++) {
+//								$('#op').html($('#op').html() + "<li>" + req[i].companyname + "<i>" + req[i].name + "</i><a href=http://127.0.0.1:8020/ajax/datail.html?id=" + req[i].id + ">详情</a></li>");
+//							}
+//						}
+//					})
+//				}
+//				console.log(removeAllSpace($('#txt').val()))
+//			})
+
+			function removeAllSpace(str) {
+				return str.replace(/\s+/g, "");
+			}
+		</script>
+	</body>
+
+</html>

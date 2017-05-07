@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn_1">按钮1</button>
+		<button id="btn_2">按钮2</button>
+		<script>
+			btn_1.onclick = function(){
+				this.parentNode.insertBefore(btn_2,btn_1)
+			}
+          
+		</script>
+	</body>
+</html>

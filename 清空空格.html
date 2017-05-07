@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <input type="text" id="txt" /><button id="btn">清除所有空格</button>
+	  <input type="text" id="sss" /><button id="btn_1">清除前后空格</button>
+	</body>
+	<script>
+		btn.onclick = function(){
+			console.log(removeAllSpace(txt.value))
+		}
+		btn_1.onclick = function(){
+			console.log(trim(sss.value))
+		}
+    //删除所有空格
+		function removeAllSpace(str) {
+			return str.replace(/\s+/g, "");
+		}
+	//删除前后空格
+	    function trim(str) {
+             return str.replace(/(^\s+)|(\s+$)/g, "");
+        }
+	</script>
+</html>
+

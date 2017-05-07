@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{margin:0;padding:0;}
+	img{width:100%;height:100%;}
+	li{list-style:none;float:left;width:170px;height:255px;border:1px solid red;margin:5px;overflow:hidden;}
+	ul{width:728px;border:1px nsolid red;margin:0 auto;overflow:hidden;}
+</style>
+<script>
+window.onload = window.onscroll = window.onresize = function(){
+	var aImg =  document.getElementsByTagName('img');
+	//获取滚动距离
+	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+	//获取可视区高度
+	var clientHeight = document.documentElement.clientHeight;
+	//获取可视区底部
+	var bottom = scrollTop+clientHeight;
+	for(var i=0;i<aImg.length;i++){
+		//alert(aImg[i].getAttribute('_src'));
+		//alert(aImg[i].offsetTop);
+		var top = aImg[i].offsetTop;
+		if(top <= bottom){
+			//alert(1);
+			var _src  = aImg[i].getAttribute('_src');
+			aImg[i].src = _src;
+		}	
+	}
+	
+};
+</script>
+</head>
+
+<body>
+	<ul id="ul">
+    	<li><img _src="images/1.jpg" /></li>
+        <li><img _src="images/2.jpg" /></li>
+        <li><img _src="images/3.jpg" /></li>
+        <li><img _src="images/4.jpg" /></li>
+        <li><img _src="images/5.jpg" /></li>
+        <li><img _src="images/6.jpg" /></li>
+        <li><img _src="images/7.jpg" /></li>
+        <li><img _src="images/8.jpg" /></li>
+        <li><img _src="images/9.jpg" /></li>
+        <li><img _src="images/10.jpg" /></li>
+        <li><img _src="images/11.jpg" /></li>
+        <li><img _src="images/12.jpg" /></li>
+        <li><img _src="images/13.jpg" /></li>
+        <li><img _src="images/14.jpg" /></li>
+        <li><img _src="images/15.jpg" /></li>
+        <li><img _src="images/16.jpg" /></li>
+        <li><img _src="images/17.jpg" /></li>
+        <li><img _src="images/18.jpg" /></li>
+        <li><img _src="images/19.jpg" /></li>
+        <li><img _src="images/20.jpg" /></li>
+        <li><img _src="images/21.jpg" /></li>
+        <li><img _src="images/22.jpg" /></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Aaa(){
+				this.a = 12;
+			}
+			Aaa.prototype.show = function(){
+				alert(this.a)
+			}
+			var obj = new Aaa();
+			obj.show()
+		</script>
+	</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta charset="utf-8"> 
+    <title></title>
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;text-decoration: none;outline: none;}
+
+body{background-color: #f3f7fa}
+/*topNode start*/
+.topNode{
+	width: 100%;height:59.5px;background: #a7212a;
+	text-align: center;line-height: 74px;
+	font-size: 13px;color: white;
+}
+.topNode > .login{
+	font-size: 12px;color: white;position: absolute;top: 31.5px;left: 25px;height: 12px;line-height: 12px;
+}
+.topNode > .login:before{
+	content: '';
+	width: 11px;height: 2.5px;background: white;position:absolute;left: -14px;top: 0;
+	transform:rotate(-45deg);
+
+}
+.topNode > .login:after{
+	content: '';
+	width: 11px;height: 2.5px;background: white;position:absolute;left: -14px;top: 6px;
+	transform:rotate(-135deg);
+
+}
+/*topNode end*/
+
+/*textNode start*/
+.textNode{
+	height: 31.5px;text-align: center;line-height: 31.5px;color: #fc8716;font-size: 13px;
+}
+/*textNode end*/
+/*flexNode start*/
+.flexNode > li{
+	height: 42.5px;width: 100%;border-top:1px solid #e4e4e4;
+	background: #fff; 
+	display: -webkit-box;
+	-webkit-box-orient:horizontal;
+}
+.flexNode > li:last-of-type{
+	border-bottom:1px solid #e4e4e4;
+}
+.flexNode > li > .soliderNode{
+	height: 100%;width: 84.5px;font-size: 12.5px;line-height: 42.5px;text-indent: 11px;
+}
+.flexNode > li > .textPlaceNode{
+	display: block;border: none;height: 12.5px;padding: 15px 0;color: #eaebed;line-height: 12.5px;
+	-webkit-box-flex:1;
+}
+.flexNode > li > .loginSerres{
+	width: 74px;height: 28px;background: #2caa9e;line-height: 28px;text-align: center;color: white;border-radius: 2.5px;font-size: 12px;margin-right: 14px;margin-top: 7.5px;
+}
+
+.radioNode{
+	height: 51px;line-height: 51px;font-size: 12px;
+}
+.radioNode .colorNode{
+	color: #43b2a2;
+}
+.radioNode input{margin-left: 11px;position: relative;top: 2px;}
+.toggleIn{
+	height: 28.5px;line-height: 28.5px;text-align: center;margin: 0 11px;background: #fc8715;border-radius: 2.5px;color: white;font-size: 13px;
+}
+
+    </style> 
+</head>
+<body>
+	<!-- topNode start -->
+	<div class='topNode'>
+		<a href="javascript:;" class='login'>登陆</a>
+		中企智导账号注册
+	</div>
+	<!-- topNode end -->
+
+	<div class='textNode'>投资第一步,从注册开始：）</div>
+	<ul class='flexNode'>
+		<li>
+			<div class='soliderNode'>手机号码</div>
+			<input class='textPlaceNode' value="请输入您的手机号码" onfocus='this.value="",this.style.color="black";'>
+		</li>
+		<li>
+			<div class='soliderNode'>验证码</div>
+			<input class='textPlaceNode' value="请输入您的验证码" onfocus='this.value="",this.style.color="black";'>
+			<div class='loginSerres'>获取验证码</div>
+		</li>
+		<li>
+			<div class='soliderNode'>密码</div>
+			<input class='textPlaceNode' value="6-12位字母和数字的组合" onfocus='this.value="",this.style.color="black";'>
+		</li>
+		<li>
+			<div class='soliderNode'>确认密码</div>
+			<input class='textPlaceNode' value="再次输入密码" onfocus='this.value="",this.style.color="black";'>
+		</li>
+	</ul>
+
+	<div class='radioNode'>
+		<input type='checkbox'>
+		<span>已阅读并同意<span class='colorNode'>《中企智导用户注册协议》</span></span>
+	</div>
+	<div class='toggleIn'>
+		立即注册
+	</div>
+</body>
+</html>
